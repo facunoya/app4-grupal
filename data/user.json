@@ -1,8 +1,14 @@
 [
  {
-  "id": 2,
+  "id": 1,
   "name": "jeremias",
-  "email": "gatofelix@gmail.com",
-  "password": "asdfsd"
+  "email": "ao@hotmail.com",
+  "password": "123456"
+ },
+ {
+  "id": 2,
+  "name": "Nina",
+  "email": "ao@hotmail.com",
+  "password": "$2a$10$TfBTaOKfqHBvk973f4qyTucqOHMJtnjLdpW7fUmvHPBZW1Y56e9MS"
  }
 ]
