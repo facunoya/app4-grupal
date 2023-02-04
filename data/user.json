@@ -12,5 +12,26 @@
   "email": "nina@gmail.com",
   "password": "$2a$10$rmbI2GZfZQHke6xLPP/3ieob2InwtF01AJQ6Zds9VUuhvZgU/Y.X6",
   "profile": "Administrador"
+ },
+ {
+  "id": 3,
+  "name": "Julian",
+  "email": "julito@gmail.com",
+  "password": "$2a$10$pJ8WAnii7SqeecimuYMLaOfnBLEmLsILV6FSZ3otD5Mw/bLJH9eJ6",
+  "profile": "Cliente"
+ },
+ {
+  "id": 4,
+  "name": "carlos",
+  "email": "carlin@kdjjd.com",
+  "password": "$2a$10$eotlbDiySS/APMZ0bsG28u6tb4p07Wj.awiRCZjpdcyk6a7/hFDiS",
+  "profile": "Cliente"
+ },
+ {
+  "id": 5,
+  "name": "Lina",
+  "email": "lina@gmail.com",
+  "password": "$2a$10$qdWzEuroReTOH4F.aGB1GO8/BQykMEeJbFVMmz5P4337aSnkT9Xa6",
+  "profile": "Administrador"
  }
 ]

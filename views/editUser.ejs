@@ -7,15 +7,16 @@
     <title>registro</title>
 </head>
 <body>
-    <h1>Formulario de registro</h1>
-    <form action="/register" method="POST">
+    <h1>Editar usuario</h1>
+    <% for(let i = 0; i < user.length; i++) {%> 
+    <form action="/edit/:id?_method=PUT" method="POST">
         <label for="">Nombre</label>
         <br><br>
-        <input type="text" name="name">
+        <input type="text" name="name" value="<%= user[i].name %>">
         <br>
         <label for="">Correo</label>
         <br><br>
-        <input type="email" name="email">
+        <input type="email" name="email" value="<%= user[i].email %>">
         <br>
         <label for="">Contraseña</label>
         <br><br>
@@ -23,12 +24,13 @@
         <br><br>
         <select name="profile" id="">
             <% let profile = ['Administrador', 'Cliente'] %>
-            <% for(let i = 0; i < profile.length; i++) {%>  
-            <option value="<%= profile[i] %>"><%= profile[i] %></option>
+            <% for(let j = 0; j < profile.length; j++) {%>  
+            <option value="<%= profile[j] %>"><%= profile[j] %></option>
             <% } %> 
         </select>
         <br><br>
-        <input type="submit" value="Registrarme">
+        <input type="submit" value="Editar">
     </form>
+    <% } %> 
 </body>
 </html>
