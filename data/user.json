@@ -1,14 +1,16 @@
 [
  {
   "id": 1,
-  "name": "jeremias",
-  "email": "ao@hotmail.com",
-  "password": "123456"
+  "name": "fanku",
+  "email": "snoya1987@gmail.com",
+  "password": "$2a$10$hFwB8jSKD68hBCaBTl9WYO37CbDsKPm5JogOP3a3RFDfS0y6yUgNq",
+  "profile": "Cliente"
  },
  {
   "id": 2,
   "name": "Nina",
-  "email": "ao@hotmail.com",
-  "password": "$2a$10$TfBTaOKfqHBvk973f4qyTucqOHMJtnjLdpW7fUmvHPBZW1Y56e9MS"
+  "email": "nina@gmail.com",
+  "password": "$2a$10$rmbI2GZfZQHke6xLPP/3ieob2InwtF01AJQ6Zds9VUuhvZgU/Y.X6",
+  "profile": "Administrador"
  }
 ]

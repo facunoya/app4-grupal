@@ -20,6 +20,13 @@
         <label for="">Contraseña</label>
         <br><br>
         <input type="password" name="password">
+        <br><br>
+        <select name="profile" id="">
+            <% let profile = ['Administrador', 'Cliente'] %>
+            <% for(let i = 0; i < profile.length; i++) {%>  
+            <option value="<%= profile[i] %>"><%= profile[i] %></option>
+            <% } %> 
+        </select>
         <br>
         <input type="submit" value="Registrarme">
     </form>
