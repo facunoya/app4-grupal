@@ -10,7 +10,7 @@
   "id": 2,
   "name": "Nina",
   "email": "nina@gmail.com",
-  "password": "$2a$10$rmbI2GZfZQHke6xLPP/3ieob2InwtF01AJQ6Zds9VUuhvZgU/Y.X6",
+  "password": "$2a$10$geLDrgyz0bU9g7FAakQtg.cKkys0JlojIxRpCQE6shFZmKtGPaJ9y",
   "profile": "Administrador"
  },
  {
@@ -22,16 +22,23 @@
  },
  {
   "id": 4,
-  "name": "carlos",
-  "email": "carlin@kdjjd.com",
-  "password": "$2a$10$eotlbDiySS/APMZ0bsG28u6tb4p07Wj.awiRCZjpdcyk6a7/hFDiS",
+  "name": "Carlos",
+  "email": "carlos@gmail.com",
+  "password": "$2a$10$2mMF/1uvjk..U4fwkV71kOlQr1iWvQrV24WOvUbi92ARZoY9XLEO.",
   "profile": "Cliente"
  },
  {
   "id": 5,
-  "name": "Lina",
-  "email": "lina@gmail.com",
-  "password": "$2a$10$qdWzEuroReTOH4F.aGB1GO8/BQykMEeJbFVMmz5P4337aSnkT9Xa6",
-  "profile": "Administrador"
+  "name": "Juana",
+  "email": "juana@dearco.com",
+  "password": "$2a$10$n5Uc/98uSBINBRnasQnLmu9knge8qSglElFatr5A6vf1FuQDzHnTO",
+  "profile": "Cliente"
+ },
+ {
+  "id": 6,
+  "name": "Francis",
+  "email": "fgermain@gmail.com",
+  "password": "$2a$10$T4CWQesPbw14YR4RcsDY7OKJor3eIvSE.VAxIKRKHoKzkG9mpgL9C",
+  "profile": "Cliente"
  }
 ]

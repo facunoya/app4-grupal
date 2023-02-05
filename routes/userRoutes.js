@@ -9,14 +9,11 @@ router.use(express.urlencoded({extended: false}))
 router.use(express.json())
 router.use(methodOverride('_method'))
 
-router.get('/register', (req, res) => {
-    res.render('register')
-})
+router.get('/register', userControllers.getRegister)
 router.post('/register', userControllers.register)
-
-router.get('/edit/:id', userControllers.getEdit )
+router.get('/edit/:id', userControllers.getEdit)
 router.put('/edit/:id', userControllers.edit)
-
-
+router.get('/delete/:id', userControllers.getDelete)
+router.delete('/delete/:id', userControllers.delete)
 
 module.exports = router

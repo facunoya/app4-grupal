@@ -21,21 +21,15 @@ const Users = {
         }
         user.push(newUser)
         fs.writeFileSync(path.join(__dirname, '../data/user.json'), JSON.stringify(user, null, " "))
-
         res.send('se guardó')
     },
     getEdit: (req, res) => {
-        //.encontrar un usuario por id 
-        //.separarlo y enviarlo al put
-        //.hacerle un map
-        //escribirlo
-
         let id = req.params.id
         let userToEdit = user.filter(x => x.id == id)
         res.render('editUser', { "user": userToEdit}) 
     },
     edit: (req, res) => {
-        let allUsers = user
+        // let allUsers = user
         let modifyUser = user.map( x => {if(x.email == req.body.email){
             x = {
                 id: x.id,
@@ -44,10 +38,21 @@ const Users = {
             } 
             return x
         } return x 
-    })
-    
-    fs.writeFileSync(path.join(__dirname, '../data/user.json'), JSON.stringify(modifyUser, null, " "))
-    res.send('Usuario modificado con éxito!')
+        })    
+        fs.writeFileSync(path.join(__dirname, '../data/user.json'), JSON.stringify(modifyUser, null, " "))
+        res.send('Usuario modificado con éxito!')
+    },
+    getDelete: (req, res) =>{
+        id = req.params.id
+        let userExports = user.filter(usuario => usuario.id == id)
+        res.render('deleteUser', { "user": userExports})
+    },
+    delete: (req, res) =>{
+        let userMail = req.body.email //necesita validación para ser eficiente
+        let newUsers = user.filter(x => x.email != userMail)
+        fs.writeFileSync(path.join(__dirname, '../data/user.json'), JSON.stringify(newUsers, null, " "))
+        console.log(newUsers)
+        res.send('Usuario ' + userMail + ' eliminado con éxito')
     }
 
 
