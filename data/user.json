@@ -40,5 +40,12 @@
   "email": "fgermain@gmail.com",
   "password": "$2a$10$T4CWQesPbw14YR4RcsDY7OKJor3eIvSE.VAxIKRKHoKzkG9mpgL9C",
   "profile": "Cliente"
+ },
+ {
+  "id": 7,
+  "name": "Ezequiel",
+  "email": "eze@gmail.com",
+  "password": "$2a$10$RT9Q7Z7lqA2vCMryznZIc.aEnwBV4mlwbU71yo6m6d2QkslKSJ/.O",
+  "profile": "Cliente"
  }
 ]

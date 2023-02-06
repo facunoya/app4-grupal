@@ -2,6 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const user = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/user.json'), 'utf-8'))
 const bcrytjs = require('bcryptjs')
+const { validationResult } = require('express-validator')
 
 const Users = {
     getRegister: (req, res) =>{
@@ -14,14 +15,20 @@ const Users = {
             return nuevoId.id + 1 } 
     },
     register: (req, res) => {
-        let newUser = {
-            id: Users.generateId(),
-            ...req.body,
-            password: bcrytjs.hashSync(req.body.password, 10)
+        let errors = validationResult(req)//requiero el error de las validaciones que cree en routes
+        if(errors.isEmpty()){
+            let newUser = {
+                id: Users.generateId(),
+                ...req.body,
+                password: bcrytjs.hashSync(req.body.password, 10)
+            }
+            user.push(newUser)
+            fs.writeFileSync(path.join(__dirname, '../data/user.json'), JSON.stringify(user, null, " "))
+            res.send('usuario creado con éxito!')
+        } else {
+            res.render('register', { "errors" : errors.array()})
         }
-        user.push(newUser)
-        fs.writeFileSync(path.join(__dirname, '../data/user.json'), JSON.stringify(user, null, " "))
-        res.send('se guardó')
+
     },
     getEdit: (req, res) => {
         let id = req.params.id

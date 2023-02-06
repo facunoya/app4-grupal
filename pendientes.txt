@@ -1,0 +1,3 @@
+-hacer validaciones: 
+    .Que no pueda registrase el mismo mail
+    .Que los campos del registro sean obligatorios

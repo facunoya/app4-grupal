@@ -7,7 +7,12 @@
     <title>registro</title>
 </head>
 <body>
-    <h1>Formulario de registro</h1>
+    <h1>Registro</h1>
+    <!--Este locals.error sirve si mandé los datos con .array(), para .mapped(), se utiliza otro parámetro-->
+    <% if(locals.errors) { 
+        errors.forEach(err => { %>
+        <p style="color: red"><%= err.msg %> </p>
+    <% }); }%> 
     <form action="/register" method="POST">
         <label for="">Nombre</label>
         <br><br>
