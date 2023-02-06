@@ -47,5 +47,26 @@
   "email": "eze@gmail.com",
   "password": "$2a$10$RT9Q7Z7lqA2vCMryznZIc.aEnwBV4mlwbU71yo6m6d2QkslKSJ/.O",
   "profile": "Cliente"
+ },
+ {
+  "id": 8,
+  "name": "Lin",
+  "email": "lin@gmail.com",
+  "password": "$2a$10$FrDvQiZKVvlFFzEJtB8SH.qzf6YcXPSQL41dtCZJDZGCJDHGKXcFy",
+  "profile": "Administrador"
+ },
+ {
+  "id": 9,
+  "name": "Simonela",
+  "email": "simona@gmail.com",
+  "password": "$2a$10$CUIj..MDpT3Z.lH51o4EH.jydGy8j0xil4jvmDV./4BH14wZPYw6O",
+  "profile": "Cliente"
+ },
+ {
+  "id": 10,
+  "name": "alan",
+  "email": "turing@gmail.com",
+  "password": "$2a$10$P4gTNLPk5QL/Spl4NGymCO8PGaGiunjJz8xflTwDTzid5xRvVTWNa",
+  "profile": "Cliente"
  }
 ]

@@ -17,18 +17,23 @@ const Users = {
     register: (req, res) => {
         let errors = validationResult(req)//requiero el error de las validaciones que cree en routes
         if(errors.isEmpty()){
-            let newUser = {
-                id: Users.generateId(),
-                ...req.body,
-                password: bcrytjs.hashSync(req.body.password, 10)
+            let userDB = user.filter(users => users.email == req.body.email)
+            if(userDB.length < 1){
+                let newUser = {//
+                    id: Users.generateId(),
+                    ...req.body,
+                    password: bcrytjs.hashSync(req.body.password, 10)
+                }
+                user.push(newUser)
+                fs.writeFileSync(path.join(__dirname, '../data/user.json'), JSON.stringify(user, null, " "))
+                res.send('usuario creado con éxito!')//
+            } else {
+                res.send('Error! el correo ya se encuentra registrado')
+                // res.render('register', { errors : { email: { msg: 'Error! ese correo ya se encuentra registrado'}}})
             }
-            user.push(newUser)
-            fs.writeFileSync(path.join(__dirname, '../data/user.json'), JSON.stringify(user, null, " "))
-            res.send('usuario creado con éxito!')
         } else {
             res.render('register', { "errors" : errors.array()})
         }
-
     },
     getEdit: (req, res) => {
         let id = req.params.id

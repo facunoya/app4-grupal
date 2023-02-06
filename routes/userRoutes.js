@@ -6,9 +6,9 @@ const router = express.Router()
 const methodOverride = require('method-override')
 const { body } = require('express-validator')
 const userCreateValidation = [
-    body('name').notEmpty().withMessage('Debes ingresar un nombre'),
-    body('password').notEmpty().withMessage('Debes ingresar una contraseña'),
-    body('email').notEmpty().withMessage('Debes ingresar un correo')
+    body('name').notEmpty().withMessage('Por favor ingrese un nombre'),
+    body('email').notEmpty().withMessage('Por favor ingrese un correo'),
+    body('password').notEmpty().withMessage('Por favor ingrese una contraseña')
 ]
 
 router.use(express.urlencoded({extended: false}))
