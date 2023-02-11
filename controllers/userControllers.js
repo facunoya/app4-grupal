@@ -29,7 +29,7 @@ const Users = {
                 res.send('usuario creado con éxito!')//
             } else {
                 res.render('register', { "mensaje": "Ese correo ya se encuentra registrado, por favor ingrese otro", "old": req.body})
-                //Esta funcion no me termina de convencer, me gustaria que pise el mensaje del err de email
+                //Esta funcion No me termina de convencer, me gustaria que pise el mensaje del err de email
             }
         } else {
             res.render('register', { "errors" : errors.array(), "old": req.body})
