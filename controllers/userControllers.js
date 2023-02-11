@@ -28,11 +28,11 @@ const Users = {
                 fs.writeFileSync(path.join(__dirname, '../data/user.json'), JSON.stringify(user, null, " "))
                 res.send('usuario creado con éxito!')//
             } else {
-                res.send('Error! el correo ya se encuentra registrado')
-                // res.render('register', { errors : { email: { msg: 'Error! ese correo ya se encuentra registrado'}}})
+                res.render('register', { "mensaje": "Ese correo ya se encuentra registrado, por favor ingrese otro", "old": req.body})
+                //Esta funcion no me termina de convencer, me gustaria que pise el mensaje del err de email
             }
         } else {
-            res.render('register', { "errors" : errors.array()})
+            res.render('register', { "errors" : errors.array(), "old": req.body})
         }
     },
     getEdit: (req, res) => {
@@ -41,7 +41,6 @@ const Users = {
         res.render('editUser', { "user": userToEdit}) 
     },
     edit: (req, res) => {
-        // let allUsers = user
         let modifyUser = user.map( x => {if(x.email == req.body.email){
             x = {
                 id: x.id,
@@ -66,8 +65,6 @@ const Users = {
         console.log(newUsers)
         res.send('Usuario ' + userMail + ' eliminado con éxito')
     }
-
-
 }
 
 module.exports =  Users

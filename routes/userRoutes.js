@@ -11,7 +11,7 @@ const userCreateValidation = [
     body('password').notEmpty().withMessage('Por favor ingrese una contraseña')
 ]
 
-router.use(express.urlencoded({extended: false}))
+router.use(express.urlencoded({extended: true}))
 router.use(express.json())
 router.use(methodOverride('_method'))
 

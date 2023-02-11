@@ -68,5 +68,12 @@
   "email": "turing@gmail.com",
   "password": "$2a$10$P4gTNLPk5QL/Spl4NGymCO8PGaGiunjJz8xflTwDTzid5xRvVTWNa",
   "profile": "Cliente"
+ },
+ {
+  "id": 11,
+  "name": "Nina",
+  "email": "nina2@gmail.com",
+  "password": "$2a$10$DVsojoVDOsJBUkaJ3oQ/meLjQzLCmFVQ84kA9CdcanopApiZQ5H9i",
+  "profile": "Administrador"
  }
 ]

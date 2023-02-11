@@ -11,16 +11,17 @@
     <!--Este locals.error sirve si mandé los datos con .array(), para .mapped(), se utiliza otro parámetro-->
     <% if(locals.errors) { 
         errors.forEach(err => { %>
-        <p style="color: red"><%= err.msg %> </p>
+        <p style="color: orange"><%= err.msg %> </p>
     <% }); }%> 
+    <p style="color: orange"><%=locals.mensaje ? locals.mensaje : "" %></p>
     <form action="/register" method="POST">
         <label for="">Nombre</label>
         <br>
-        <input type="text" name="name">
+        <input type="text" name="name" value="<%= locals.old && old.name ? old.name : "" %>">
         <br><br>
         <label for="">Correo</label>
         <br>
-        <input type="email" name="email">
+        <input type="email" name="email" value="<%= locals.old && old.email ? old.email : "" %>">
         <br><br>
         <label for="">Contraseña</label>
         <br>
