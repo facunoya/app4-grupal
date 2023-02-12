@@ -1,8 +1,9 @@
 const fs = require('fs')
 const path = require('path')
 const user = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/user.json'), 'utf-8'))
-const bcrytjs = require('bcryptjs')
+const bcryptjs = require('bcryptjs')
 const { validationResult } = require('express-validator')
+const session = require('express-session')
 
 const Users = {
     getRegister: (req, res) =>{
@@ -22,17 +23,19 @@ const Users = {
                 let newUser = {//
                     id: Users.generateId(),
                     ...req.body,
-                    password: bcrytjs.hashSync(req.body.password, 10)
+                    password: bcryptjs.hashSync(req.body.password, 10)
                 }
                 user.push(newUser)
                 fs.writeFileSync(path.join(__dirname, '../data/user.json'), JSON.stringify(user, null, " "))
                 res.send('usuario creado con éxito!')//
             } else {
                 res.render('register', { "mensaje": "Ese correo ya se encuentra registrado, por favor ingrese otro", "old": req.body})
+                
                 //Esta funcion No me termina de convencer, me gustaria que pise el mensaje del err de email
             }
         } else {
             res.render('register', { "errors" : errors.array(), "old": req.body})
+            console.log(errors.array())
         }
     },
     getEdit: (req, res) => {
@@ -45,7 +48,7 @@ const Users = {
             x = {
                 id: x.id,
                 ...req.body,
-                password: bcrytjs.hashSync(req.body.password, 10)
+                password: bcryptjs.hashSync(req.body.password, 10)
             } 
             return x
         } return x 
@@ -64,7 +67,26 @@ const Users = {
         fs.writeFileSync(path.join(__dirname, '../data/user.json'), JSON.stringify(newUsers, null, " "))
         console.log(newUsers)
         res.send('Usuario ' + userMail + ' eliminado con éxito')
-    }
+    },
+    getLogin: (req, res) => {
+        res.render('login')
+    },
+    login: (req, res) => {
+        const allUsers  = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/user.json'), 'utf-8'))
+        const userLog = allUsers.filter(x => x.email == req.body.email)
+        if(userLog.length < 1){
+            res.send('no se encontro')
+        } else {
+            if(bcryptjs.compareSync(req.body.password, userLog[0].password)){
+                let userIsLoged = userLog[0]
+                req.session.usuarioLogueado = userIsLoged/*session*/
+                res.send("Bienvenido a la comunidad "+ userIsLoged.email)  
+            } else { 
+                res.send('Contraseña incorrecta')
+            }
+            res.send(userLog[0].name)
+        } 
+    } 
 }
 
 module.exports =  Users

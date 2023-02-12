@@ -21,5 +21,14 @@ router.get('/edit/:id', userControllers.getEdit)
 router.put('/edit/:id', userControllers.edit)
 router.get('/delete/:id', userControllers.getDelete)
 router.delete('/delete/:id', userControllers.delete)
+router.get('/login', userControllers.getLogin)/*session*/
+router.post('/login', userControllers.login)/*session*/
+router.get('/check', (req, res) => {
+    if(req.session.usuarioLogueado ==  undefined){
+        res.send('No estas logueado')
+    } else {
+        res.send('Ya estas logueado')
+    }
+})
 
 module.exports = router

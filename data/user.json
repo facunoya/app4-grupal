@@ -75,5 +75,12 @@
   "email": "nina2@gmail.com",
   "password": "$2a$10$DVsojoVDOsJBUkaJ3oQ/meLjQzLCmFVQ84kA9CdcanopApiZQ5H9i",
   "profile": "Administrador"
+ },
+ {
+  "id": 12,
+  "name": "Agos",
+  "email": "agos@gmail.com",
+  "password": "$2a$10$IX/mc3a/J9w2RYDtihSXn.I2NZAXc26JfX13w2t6hWWWgCSoLmmQa",
+  "profile": "Administrador"
  }
 ]
