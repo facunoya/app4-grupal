@@ -8,7 +8,6 @@
 </head>
 <body>
     <h1>Registro</h1>
-    <!--Este locals.error sirve si mandé los datos con .array(), para .mapped(), se utiliza otro parámetro-->
     <% if(locals.errors) { 
         errors.forEach(err => { %>
         <p style="color: orange"><%= err.msg %> </p>
@@ -30,7 +29,7 @@
         <select name="profile" id="">
             <% let profile = ['Administrador', 'Cliente'] %>
             <% for(let i = 0; i < profile.length; i++) {%>  
-            <option value="<%= profile[i] %>"><%= profile[i] %></option>
+            <option><%= profile[i] %></option>
             <% } %> 
         </select>
         <br><br>
@@ -38,3 +37,39 @@
     </form>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

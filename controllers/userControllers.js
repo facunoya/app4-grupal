@@ -3,6 +3,7 @@ const path = require('path')
 const user = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/user.json'), 'utf-8'))
 const bcryptjs = require('bcryptjs')
 const { validationResult } = require('express-validator')
+const db = require('../database/models')
 
 const Users = {
     getRegister: (req, res) =>{
@@ -88,6 +89,12 @@ const Users = {
     },
     getHome: (req, res) => {
         res.render('home')
+    },
+    getUsers: (req, res) =>{
+        db.Users.findAll()
+        .then((usuarios)=>{
+            res.render('mostrarUsers', {users: usuarios})
+        })
     } 
 }
 
